@@ -1,6 +1,6 @@
 {
   "name": "json-socket-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Websocket server which stores data in json files.",
   "main": "./bin/index.js",
   "bin": {
