@@ -1,0 +1,25 @@
+{
+  "name": "json-socket-server",
+  "version": "0.0.1",
+  "description": "Websocket server which stores data in json files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cherryApp/json-socket-server.git"
+  },
+  "keywords": [
+    "json",
+    "websocket",
+    "server",
+    "standalone"
+  ],
+  "author": "cherryApp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cherryApp/json-socket-server/issues"
+  },
+  "homepage": "https://github.com/cherryApp/json-socket-server#readme"
+}
