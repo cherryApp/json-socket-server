@@ -2,4 +2,9 @@
 
 const server = require('../lib/server');
 
-console.log(server.greet());
+const test = async () => {
+    let id = await server.save({name: 'Jack', email: 'jack@gmail.com'});
+    console.log(id);
+};
+
+test();

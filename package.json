@@ -7,6 +7,7 @@
     "json-socket-server": "./bin/index.js"
   },
   "scripts": {
+    "start": "node ./bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,11 @@
   "engines": {
     "node": ">=8"
   },
-  "homepage": "https://github.com/cherryApp/json-socket-server#readme"
+  "homepage": "https://github.com/cherryApp/json-socket-server#readme",
+  "dependencies": {
+    "lowdb": "^1.0.0",
+    "trivialdb": "^3.0.0",
+    "uuid": "^3.3.2",
+    "ws": "^7.1.1"
+  }
 }
