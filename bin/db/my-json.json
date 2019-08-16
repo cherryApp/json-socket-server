@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "name": "Jack"
+    },
+    {
+      "id": 4,
+      "name": "Jack"
+    },
+    {
+      "id": 3,
+      "name": "Jack"
+    },
+    {
+      "id": 2,
+      "content": "My post."
+    },
+    {
+      "id": 1,
+      "content": "My post."
+    },
+    {
+      "id": 6,
+      "name": "Jack"
+    }
+  ],
+  "user": {}
+}
