@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing json-sokcet-server</title>
+</head>
+<body>
+    <h1>Socket test</h1>
+
+    <button id="get">
+        Get
+    </button>
+    <button id="post">
+        Post
+    </button>
+    <button id="put">
+        Put
+    </button>
+    <button id="delete">
+        Delete
+    </button>
+
+    <pre id="output">
+
+    </pre>
+
+    <script>
+        const socketUrl = "ws://localhost:3210";
+        let exampleSocket = new WebSocket(socketUrl);
+
+        document.querySelector("#get").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+        });
+        document.querySelector("#post").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({type: 'post', path: 'posts', data: {
+                content: 'Post from .js :)'
+            }}));
+        });
+        document.querySelector("#put").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+        });
+        document.querySelector("#delete").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+        });
+
+        let retryConnectionCount = 0;
+        exampleSocket.onopen = (ev) => {
+            console.log('Socket opened: ', ev);
+            retryConnectionCount = 25;
+        }
+
+        exampleSocket.onmessage = (m) => {
+            console.log('Message: ', m);
+            let message = JSON.parse(m.data);
+        };
+
+        exampleSocket.onclose = (ev) => {
+            console.log('Socket closed: ', ev);
+        }
+    </script>
+</body>
+</html>
