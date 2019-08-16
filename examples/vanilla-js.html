@@ -33,19 +33,19 @@
         const output = document.querySelector('#output');
 
         document.querySelector("#get").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'read', path: 'posts'}));
+            exampleSocket.send(JSON.stringify({type: 'read', path: 'users'}));
         });
         document.querySelector("#post").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'create', path: 'posts', data: {
-                content: 'Post from .js :)'
+            exampleSocket.send(JSON.stringify({type: 'create', path: 'users', data: {
+                name: 'Paco Rabanne'
             }}));
         });
         document.querySelector("#put").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'update', path: 'posts', 
+            exampleSocket.send(JSON.stringify({type: 'update', path: 'users', 
                 id: 1, data: {name: 'Josh', age: 20} }));
         });
         document.querySelector("#delete").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'delete', path: 'posts', id: 20}));
+            exampleSocket.send(JSON.stringify({type: 'delete', path: 'users', id: 2}));
         });
 
         let retryConnectionCount = 0;
