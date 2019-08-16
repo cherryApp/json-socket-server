@@ -31,18 +31,19 @@
         let exampleSocket = new WebSocket(socketUrl);
 
         document.querySelector("#get").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+            exampleSocket.send(JSON.stringify({type: 'read', path: 'posts'}));
         });
         document.querySelector("#post").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'post', path: 'posts', data: {
+            exampleSocket.send(JSON.stringify({type: 'create', path: 'posts', data: {
                 content: 'Post from .js :)'
             }}));
         });
         document.querySelector("#put").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+            exampleSocket.send(JSON.stringify({type: 'update', path: 'posts', 
+                id: 1, data: {name: 'Josh', age: 20} }));
         });
         document.querySelector("#delete").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'get', path: 'posts'}));
+            exampleSocket.send(JSON.stringify({type: 'delete', path: 'posts', id: 20}));
         });
 
         let retryConnectionCount = 0;
@@ -52,8 +53,8 @@
         }
 
         exampleSocket.onmessage = (m) => {
-            console.log('Message: ', m);
             let message = JSON.parse(m.data);
+            console.log('Message: ', message);
         };
 
         exampleSocket.onclose = (ev) => {
