@@ -27,7 +27,7 @@
     </pre>
 
     <script>
-        const socketUrl = "ws://localhost:3210";
+        const socketUrl = "ws://localhost:8080";
         let exampleSocket = new WebSocket(socketUrl);
 
         const output = document.querySelector('#output');
@@ -42,10 +42,10 @@
         });
         document.querySelector("#put").addEventListener('click', () => {
             exampleSocket.send(JSON.stringify({type: 'update', path: 'users', 
-                id: 1, data: {name: 'Josh', age: 20} }));
+                id: 5, data: {id: 5, name: 'Josh', age: 20} }));
         });
         document.querySelector("#delete").addEventListener('click', () => {
-            exampleSocket.send(JSON.stringify({type: 'delete', path: 'users', id: 2}));
+            exampleSocket.send(JSON.stringify({type: 'delete', path: 'users', id: 9}));
         });
 
         let retryConnectionCount = 0;
