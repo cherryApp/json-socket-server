@@ -2,7 +2,9 @@
   "posts": [
     {
       "id": 1,
-      "content": "My post."
+      "content": "My post.",
+      "name": "Josh",
+      "age": 20
     },
     {
       "id": 2,
@@ -110,6 +112,22 @@
     },
     {
       "id": 29,
+      "content": "Post from .js :)"
+    },
+    {
+      "id": 30,
+      "content": "Post from .js :)"
+    },
+    {
+      "id": 31,
+      "content": "Post from .js :)"
+    },
+    {
+      "id": 32,
+      "content": "Post from .js :)"
+    },
+    {
+      "id": 33,
       "content": "Post from .js :)"
     }
   ],

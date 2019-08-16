@@ -30,6 +30,8 @@
         const socketUrl = "ws://localhost:3210";
         let exampleSocket = new WebSocket(socketUrl);
 
+        const output = document.querySelector('#output');
+
         document.querySelector("#get").addEventListener('click', () => {
             exampleSocket.send(JSON.stringify({type: 'read', path: 'posts'}));
         });
@@ -54,6 +56,7 @@
 
         exampleSocket.onmessage = (m) => {
             let message = JSON.parse(m.data);
+            output.innerHTML = JSON.stringify(message, null, 4);
             console.log('Message: ', message);
         };
 
