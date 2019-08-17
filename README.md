@@ -9,6 +9,7 @@ Use for fake api, testing and mocking applications.
 - [Create a new document](#create-a-new-document)
 - [Update a document](#update-a-document)
 - [Delete a document](#delete-a-document)
+- [Notify from the server](#notify-from-the-server)
 
 ## Install and run
 Install JSON Server
@@ -121,6 +122,24 @@ exampleSocket.send(JSON.stringify({type: 'delete', path: 'users', id: 9}));
 ```
 If you are connected with the specified path,  
 the server will notify you from updates.
+
+## Notify from the server
+When you send a __create__|__update__|__delete__ message to the server,  
+the server notifies all client for the changes, if they are connected for  
+the updated collection. The below example shows a typical update message.  
+```javascript
+{
+    type: "update",
+    path: "users",
+    data: [
+        {
+            id: 2,
+            name: "Paco Rabanne",
+        }
+    ]
+}
+```
+__Don't forget to connect the collection.__  
 
 
 
